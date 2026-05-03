@@ -22,3 +22,9 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Server Secrets
+server/tokens.json
+server/oauth2.keys.json
+server/serviceAccountKey.json
+hello.env

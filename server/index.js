@@ -1,6 +1,7 @@
 import express from 'express';
 import cors from 'cors';
 import jwt from 'jsonwebtoken';
+import 'dotenv/config';
 import PDFDocumentPkg from 'pdfkit-table';
 const PDFDocument = PDFDocumentPkg.default || PDFDocumentPkg;
 import admin from 'firebase-admin';
@@ -38,7 +39,7 @@ try {
   const web = oauthKeys.web || oauthKeys.installed;
   oauth2Client = new google.auth.OAuth2({
     clientId: web.client_id,
-    clientSecret: web.client_secret,
+    clientSecret: process.env.GOOGLE_CLIENT_SECRET,
     redirectUri: "http://127.0.0.1:3000/api/oauth2callback"
   });
   
